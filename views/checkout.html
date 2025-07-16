@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    <div class="text-center mt-40">
+      <h1>
+        Checkout
+      </h1>
+      <h5 class="text-secondary">
+        {{ title }}
+      </h5>
+      <hr class="mt-40">
+      <div class="mt-20 text-info">
+        Total (<span id="currency" data-currency="sgd">SGD</span>): $<span id="total-due" class="amount" data-amount="{{ amount }}" data-item="{{ item }}"></span>
+      </div>
+    </div>
+    <div class="card box-shadow mt-40">
+      <div class="card-body">
+        <form id="payment-form">
+          <div>
+            <label for="email">Receipt email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@email.com">
+          </div>
+          <div type="text" id="email-errors"></div>
+          <div class="mt-20 text-center text-secondary border-placeholder">
+            <div id="payment-element">
+              <!--Stripe.js injects the Payment Element-->
+            </div>
+          </div>
+          <div class="mt-20">
+            <button id="submit" class="btn btn-lg btn-block btn-primary">
+              <div class="spinner hidden" id="spinner"></div>
+              Pay $<span id="button-text" class="amount" data-amount="{{ amount }}"></span>
+            </button>
+          </div>
+          <div id="payment-message" class="hidden"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
