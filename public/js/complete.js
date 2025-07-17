@@ -22,7 +22,7 @@ if (window.location.pathname === "/complete") {
   checkPaymentStatus();
 }
 
-
+// Check payment status, retrieve payment intent and set payment details
 async function checkPaymentStatus() {
   const params = new URLSearchParams(window.location.href);
   const piClientSecret = params.get("payment_intent_client_secret");
@@ -48,6 +48,7 @@ async function checkPaymentStatus() {
   setPaymentDetails(paymentIntent);
 }
 
+// Set payment details
 function setPaymentDetails(intent) {
     let statusText = "Something went wrong, please try again.";
     let iconColor = "#DF1B41";
@@ -94,6 +95,7 @@ function setPaymentDetails(intent) {
 
 }
 
+// Set error state
 function setErrorState() {
     document.querySelector("#status-icon").style.backgroundColor = "#DF1B41";
     document.querySelector("#status-icon").innerHTML = ErrorIcon;

@@ -86,23 +86,23 @@ def complete():
   return render_template('complete.html', item=item, payment_intent=paymentIntentId)
 
 
-# Cancel payment intent route
+# Cancel payment intent route, for testing purpose
 @app.route('/cancel_payment_intent', methods=['GET'])
 def cancel_payment_intent():
   paymentIntentId = request.args.get('payment_intent')
   paymentIntent = stripe.PaymentIntent.cancel(paymentIntentId)
   return jsonify(paymentIntent=paymentIntent)
 
+# Retrieve payment intent route, for testing purpose
 @app.route('/json_payment_intent', methods=['GET'])
 def json_payment_intent():
   paymentIntentId = request.args.get('payment_intent')
   paymentIntent = stripe.PaymentIntent.retrieve(paymentIntentId)
   return jsonify(paymentIntent=paymentIntent)
 
-# Webhook route
+# Webhook route, for testing purpose
 @app.route('/webhook', methods=['POST'])
 def webhook_received():
-    # You can use webhooks to receive information about asynchronous payment events.
     # For more about our webhook events check out https://stripe.com/docs/webhooks.
     webhook_secret = os.getenv('STRIPE_WEBHOOK_SECRET')
     request_data = json.loads(request.data)

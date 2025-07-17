@@ -46,11 +46,13 @@ async function initialize() {
 
 }
 
+// Validate email address
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
+// Handle form submission
 async function handleSubmit(e) {
     // Prevents the default form submission behavior (which would reload the page)
     e.preventDefault();
@@ -88,7 +90,6 @@ async function handleSubmit(e) {
   }
   
   // ------- UI helpers -------
-  
   function showMessage(messageText) {
     const messageContainer = document.querySelector("#payment-message");
   
