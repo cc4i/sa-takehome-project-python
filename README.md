@@ -6,16 +6,6 @@ The repository demonstrates how to integrate Stripe’s PaymentIntent lifecycle,
 
 
 
-## High level architecture
-
-![System diagram](./public/images/sys.png)
-
-## High level workflow
-
-![Workflow](./public/images/workflow.png)
-
-
-
 ## Application
 
 Using [poetry](https://python-poetry.org/docs/#installation) to manage python environment and dependencies. 
@@ -71,7 +61,7 @@ The assignment was from Su's email.
 
 ### Approach
 
-#### Researching and understanding the core concepts
+#### 1. Researching and understanding the core concepts
 
 I began by researching and understanding the core concepts and architecture of [Stripe's payment platform](https://stripe.com/en-sg/payments). This included:
 
@@ -83,7 +73,7 @@ I began by researching and understanding the core concepts and architecture of [
 
 This foundational knowledge enabled me to make informed architectural decisions and select the most appropriate Stripe APIs and integration patterns for the project.
 
-#### Gained hands-on experience with Stripe's sandbox
+#### 2. Gained hands-on experience with Stripe's sandbox
 
 I gained hands-on experience with [Stripe's sandbox environment](https://docs.stripe.com/sandboxes) to safely experiment with payment flows, error scenarios, and webhook events without risking real funds. This included:
 
@@ -93,10 +83,29 @@ I gained hands-on experience with [Stripe's sandbox environment](https://docs.st
 - I studied a variety of open-source sample projects and code snippets from GitHub, focusing on both backend (Python/Flask) and frontend (JavaScript/Stripe Elements) integrations. This helped me understand best practices, common pitfalls, and efficient implementation patterns.
 - I supplemented my learning by watching [Payment Element using Python](https://www.youtube.com/watch?v=tCSbCk5j3Tk) and tutorial videos on YouTube. These resources provided practical demonstrations of Stripe integration, troubleshooting tips, and insights into real-world use cases, which accelerated my understanding and implementation process.
 
-#### Analyse the baseline repo and planning
+#### 3. Analyse the baseline repo and planning
 I cloned the [repository](https://github.com/marko-stripe/sa-takehome-project-python), resolved initial setup issues to ensure the app runs locally, and planned the integration of Stripe using the Payment Intents API.
 
-### Tasks in action 
+#### 4. Technical design
+
+##### High level architecture
+
+The application integrates Stripe Payment Elements, which are securely embedded in the website via an iframe. These elements are dynamically configured to support a wide range of payment methods. Below is a system diagram illustrating the overall architecture:
+
+![System diagram](./public/images/sys.png)
+
+1 & 2 - Customers interact with the online website throughout their shopping experience.
+3 & 4 - The web application manages the payment process behind the scenes, powered by Stripe.
+
+
+###### High level workflow
+
+Here's a breakdown of the workflow happening behind the scenes:
+
+![Workflow](./public/images/workflow.png)
+
+
+#### 5. Tasks in action 
 - Implemented a dedicated checkout page, integrating Stripe Payment Elements to securely collect payment details from users. I developed supporting JavaScript to handle form submission, client-side validation, and communication with the backend to create PaymentIntents.
 - Created a confirmation (complete) page that displays the outcome of the payment, including the total amount charged and the Stripe Payment Intent ID. I ensured the page dynamically retrieves and presents relevant transaction details to the user.
 - Conducted thorough testing of the payment flow, simulating various scenarios such as successful payments, failed transactions, and required authentication steps. I optimized both frontend and backend code for reliability, user experience, and error handling.
