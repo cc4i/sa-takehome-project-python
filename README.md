@@ -93,18 +93,18 @@ I cloned the [repository](https://github.com/marko-stripe/sa-takehome-project-py
 
 #### 4. Technical design
 
-##### High level architecture
+<b> High level architecture </b>
 
 The application integrates Stripe Payment Elements, which are securely embedded in the website via an iframe. These elements are dynamically configured to support a wide range of payment methods. Below is a system diagram illustrating the overall architecture:
 
 ![System diagram](./public/images/sys.png)
 
-<b>Step 1 & 4</b> - Customers interact with the online website throughout their shopping experience.
+- Customers interact with the online website throughout their shopping experience.
 
-<b>Step 2 & 4</b> - The web application manages the payment process behind the scenes, powered by Stripe.
+- The web application manages the payment process behind the scenes, powered by Stripe.
 
 
-###### High level workflow
+<b> High level workflow </b>
 
 Here's a breakdown of the workflow happening behind the scenes:
 
