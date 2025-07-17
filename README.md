@@ -94,8 +94,9 @@ The application integrates Stripe Payment Elements, which are securely embedded 
 
 ![System diagram](./public/images/sys.png)
 
-1 & 2 - Customers interact with the online website throughout their shopping experience.
-3 & 4 - The web application manages the payment process behind the scenes, powered by Stripe.
+<b>Step 1 & 4</b> - Customers interact with the online website throughout their shopping experience.
+
+<b>Step 2 & 4</b> - The web application manages the payment process behind the scenes, powered by Stripe.
 
 
 ###### High level workflow
