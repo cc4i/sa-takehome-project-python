@@ -17,7 +17,7 @@ To get started, clone the repository and run pip3 to install dependencies:
 git clone https://github.com/cc4i/sa-takehome-project-python.git && cd sa-takehome-project-python
 ```
 
-You can modify the Python version in [pyproject.toml](./pyproject.toml) accordingly, and then update the lock file and dependencies:
+You can modify the Python version at the section of "requires-python" in [pyproject.toml](./pyproject.toml) accordingly, and then update the lock file and dependencies:
 
 ```shell
 poetry lock
@@ -27,7 +27,12 @@ Then install and activate the environment:
 
 ```shell
 poetry install
-poetry shell
+poetry env activate
+```
+
+Verify your environment is active:
+```shell
+poetry env list
 ```
 
 Rename `sample.env` to `.env` and populate it with your Stripe account's API keys.
@@ -35,7 +40,7 @@ Rename `sample.env` to `.env` and populate it with your Stripe account's API key
 Then run the application locally:
 
 ```
-poetry run flask run
+FLASK_APP=app:app poetry run flask run
 ```
 
 Navigate to [http://localhost:5000](http://localhost:5000) to view the index page.
